@@ -25,7 +25,17 @@ async function main() {
 
     let songUL =  document.querySelector(".songList").getElementsByTagName("ul")[0];
     for (const sing of songs) {
-        songUL.innerHTML = songUL.innerHTML + `<li> ${sing} </li>`;
+        songUL.innerHTML = songUL.innerHTML + `<li >
+                                <img class="invert" src="music.svg" alt="">
+                                <div class="info">
+                                    <div class="songNameA">${sing.replaceAll("%"," ").slice(sing.indexOf('5Csongs'))}</div>
+                                    <hr>
+                                    <div>Harshit</div>
+                                </div>
+                                <div>
+                                    <img class="invert" src="playLib.svg" alt="">
+                                </div>
+                            </li>`;
     }
 
     // Play the first song
