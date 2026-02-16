@@ -18,6 +18,12 @@ async function getSongs() {
     return songs;
 }
 
+const playMusic = (track)=>{
+    // console.log("Playing music");
+    let audio = new Audio("/songs/" + track);
+    audio.play();
+}
+
 async function main() {
 
     let currentSongs;
@@ -31,7 +37,7 @@ async function main() {
         songUL.innerHTML = songUL.innerHTML + `<li >
                                 <img class="invert" src="music.svg" alt="">
                                 <div class="info">
-                                    <div class="songNameA">${sing.replaceAll("%"," ").slice(sing.indexOf('5Csongs'))}</div>
+                                    <div class="songNameA">${sing.replaceAll("%"," ")}</div>
                                     <hr>
                                     <div>Harshit</div>
                                 </div>
@@ -42,7 +48,10 @@ async function main() {
 
     // Attacch an event listener to each songs.
     Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e=>{
-        console.log(e)
+        e.addEventListener("click", element=>{
+            console.log(e.querySelector(".info").firstElementChild.innerHTML);
+            playMusic(e.querySelector(".info").firstElementChild.innerHTML);
+        })
     })
 
     // Play the first song
