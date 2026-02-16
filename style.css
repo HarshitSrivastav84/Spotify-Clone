@@ -153,8 +153,10 @@ body{
     bottom: 30px;
     background-color: rgb(138, 196, 138);
     width: 69%;
+    height: 29px;
     /* height: 50px; */
     padding: 10px;
+    border-radius: 30px;
 }
 .songButtons{
     display: flex;
@@ -191,5 +193,25 @@ body{
     height: 390px;
     overflow-y: scroll;
     margin: 25px 0px;
+}
+
+.seekbar{
+    flex-wrap: wrap;
+    width: 98%;
+    padding-left: 0px;
+    height: 2px;
+    border: 2px solid red;
+    position: absolute;
+    bottom: 5px;
+    border-radius: 10px;
+}
+.circle{
+    width: 13px;
+    height: 13px;
+    border-radius: 25px;
+    background-color: black;
+    position: relative;
+    bottom: 6px;
+    transition: left 0.5s;
 }
 
